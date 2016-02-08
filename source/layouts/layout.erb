@@ -1,20 +1,188 @@
 <!doctype html>
-<html>
+<html class="no-js" lang="en" id="<%= current_page.data.page %>">
   <head>
-    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="google-site-verification" content="lPQog4EO1XbhQC-eBDBdrMZI_h-_cv-pqR5M7agsmH0" />
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Search engine stuff -->
+    <title><%= current_page.data.title || "World Forest Investment Inc." %></title>
+    <meta name="description" content="Services for a wide spectrum of issues regarding sound forestry business and investment. Our experience is broad and varied domestically and internationally.">
+    <meta name="keywords" content="international investments, international investment, forest investment, forest investments, forestry, south american investments, forestland acquisition, forestland acquisitions, forestland disposition, forestland brokerage, due diligence, land easements, applied forest management, investment analysis">
     <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
 
-    <!-- Use title if it's in the page YAML frontmatter -->
-    <title><%= current_page.data.title || "Middleman" %></title>
+    <!-- favicon.ico -->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="&nbsp;"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
 
-    <link href='//fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
-
-    <%= stylesheet_link_tag :site %>
+    <!-- Styles -->
+    <%= stylesheet_link_tag "assets/css/foundation.css" %>
+    <%= stylesheet_link_tag "assets/css/main.css" %>
     <%= javascript_include_tag :all %>
-  </head>
 
-  <body class="<%= page_classes %>">
+    <!-- Preloaded JS -->
+    <%= javascript_include_tag "modernizr" %>
+  </head>
+  <body>
+    <!--[if lte IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Navigation -->
+
+    <section class="contain-to-grid">
+      <nav class="top-bar" data-topbar role="navigation">
+
+        <!-- Title -->
+        <ul class="title-area">
+          <li class="name">
+            <h1>
+              <a data-interchange="[{{ '/img/wfi-nav-logo.png' | asset_url }}, (default)], [{{ '/img/wfi-nav-logo@2x.png' | asset_url }}, (retina)]" href="/">
+                World Forest Investment
+              </a>
+            </h1>
+          </li>
+          <li class="toggle-topbar menu-icon">
+            <a href="#"><span>Menu</span></a>
+          </li>
+        </ul>
+
+        <!-- Site Navigation -->
+        <section class="top-bar-section">
+          <!-- Right Nav Section -->
+          <ul class="right">
+            <li class="has-dropdown">
+              <a href="#">Contact Us</a>
+              <ul class="dropdown">
+                <li class="static">
+                  <a href="#" class="static"><b>Mark Willhite, President</b></a>
+                </li>
+                <li>
+                  <a id="resume-link" href="http://worldforestinvestment.com/pdfs/Mark_Willhite_Resume_2010.pdf">Resumé</a>
+                </li>
+                <li>
+                  <a href="tel:15036956419">1-503-695-6419</a>
+                </li>
+                <li class="active">
+                  <a href="#" data-reveal-id="contact-modal">Send us an email</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <!-- Left Nav Section -->
+          <ul class="left">
+            <li class="forestland-for-sale">
+              <a href="/forestland-for-sale">Forestland for Sale</a>
+            </li>
+          </ul>
+        </section>
+      </nav>
+    </section> <!-- End of Navigation -->
+
+
+    <!--
+      Begin Content
+    -->
+
     <%= yield %>
-  </body>
+
+    <!--
+      End of content
+    -->
+
+
+    <!--
+      Modal Dialogs
+    -->
+
+    <!-- Contact form dialog -->
+    <div id="contact-modal" class="reveal-modal" data-reveal aria-labelledby="Contact Us" aria-hidden="true" role="dialog">
+
+      <form class="formspree" data-success="Thanks for your message, we&rsquo;ll respond shortly!" data-failure="Sorry, something went wrong&hellip;please try again later.">
+        <input type="hidden" name="_subject" value="New message from worldforestinvestment.com" />
+        <input type="text" name="_gotcha" style="display:none" />
+
+        <div class="row">
+          <div class="large-12 columns">
+            <label> Subject
+              <input type="text" name="subject" placeholder="How much wood could a woodchuck chuck?" />
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-12 columns">
+            <label> Email
+              <input type="email" name="email" placeholder="you@example.com" />
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-12 columns">
+            <label> Message
+              <textarea name="message" placeholder="If a woodchuck could chuck wood?" rows="4"></textarea>
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="large-2 columns">
+            <a href="#" class="small button submit">Submit</a>
+          </div>
+        </div>
+      </form>
+
+      <!-- Close button -->
+      <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+    </div> <!-- End of Contact form dialog -->
+
+
+    <!-- Successful form submission dialog -->
+    <div id="form-submission-success-modal" class="reveal-modal" data-reveal aria-labelledby="Thanks!" aria-hidden="true" role="dialog">
+      <div class="text-center">
+        <!-- Icon -->
+        <img text-center data-interchange="[{{ '/img/success-icon.png' | asset_url }}, (default)], [{{ '/img/success-icon@2x.png' | asset_url }}, (retina)]">
+
+        <!-- Message -->
+        <h3 class="message"><!-- Populated via js --></h3>
+      </div>
+
+      <!-- Close button -->
+      <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+    </div> <!-- End of Successful form submission dialog -->
+
+
+    <!-- Failed form submission dialog -->
+    <div id="form-submission-failure-modal" class="reveal-modal" data-reveal aria-labelledby="Failed to send message" aria-hidden="true" role="dialog">
+
+      <div class="text-center">
+        <!-- Icon -->
+        <img text-center data-interchange="[{{ '/img/bug-icon.png' | asset_url }}, (default)], [{{ '/img/bug-icon@2x.png' | asset_url }}, (retina)]">
+
+        <!-- Message -->
+        <h3 class="message"><!-- Populated via js --></h3>
+      </div>
+
+      <!-- Close button -->
+      <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+    </div> <!-- End of Failed form submission dialog -->
+	</body>
 </html>

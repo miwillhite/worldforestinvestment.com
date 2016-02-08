@@ -1,13 +1,111 @@
 ---
-title: Welcome to Middleman
+page: index
 ---
 
-<div class="welcome">
-  <div class="logo">
-    <%= image_tag "middleman-logo.svg" %>
+<!-- Masthead Section -->
+<section id="masthead" class="full-width" data-interchange="[{{ '/img/masthead.jpg' | asset_url }}, (default)]">
+  <div class="row">
+    <!-- Mission Statement -->
+    <h1 class="large-12 columns">
+      <strong>Mission:</strong> We are committed to productive, responsible forest investments. Our belief is that sound business principles can be applied to sound forestry practices; resulting in a better world and a profession we can be proud of.
+    </h1>
+
+    <!-- Mailing List Signup -->
+    <form class="formspree" data-success="Thanks for signing up!" data-failure="Sorry, something went wrong&hellip;please try again later.">
+      <input type="hidden" name="_subject" value="New Notification Signup from worldforestinvestment.com" />
+      <input type="text" name="_gotcha" style="display:none" />
+
+      <h4>Sign up for property sale notifications</h4>
+      <div class="row">
+        <div class="large-5 columns">
+          <div class="row collapse">
+            <div class="small-9 columns">
+              <input type="email" name="email" placeholder="Your favorite email address" />
+            </div>
+            <div class="small-3 columns">
+              <a role="buttom" aria-label="submit form" href="#" class="button postfix submit">Sign Up</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <!-- Photo Label -->
+    <p class="photo-description">Pine plantation near Cotopaxi, Ecuador</p>
   </div>
-  <h1>Middleman is Running</h1>
-  <p class="doc">
-    <%= link_to "Read Documentation Online", "https://middlemanapp.com", target: "_blank" %>
-  </p><!-- .doc -->
-</div><!-- .welcome -->
+</section> <!-- End of Masthead Section -->
+
+
+<!-- Featured Section -->
+<section id="featured" class="row">
+  <ul class="small-block-grid-1 large-block-grid-3">
+
+    <!-- Item 1 -->
+    <li data-interchange="[{{ '/img/featured/tree-icon.png' | asset_url }}, (default)], [{{ '/img/featured/tree-icon@2x.png' | asset_url }}, (retina)]">
+      <a href="/forestland-for-sale">
+        <noscript><img src="/img/featured/tree-icon.png" /></noscript>
+        <h3>Pacific Northwest Forestland for Sale</h3>
+        <p>
+          Our latest featured PNW listing is the <b>Manning Tract</b> in Washington County Oregon. With 70 acres,
+          1,700MBF Timber listed at $______
+        </p>
+      </a>
+    </li>
+
+    <!-- Item 2 -->
+    {% assign icon_url = '/img/featured/investment-icon.png' | asset_url %}
+    {% assign retina_icon_url = '/img/featured/investment-icon@2x.png' | asset_url %}
+    <li data-interchange="[{{ icon_url }}, (default)], [{{ retina_icon_url }}, (retina)]">
+      <a href="/international-investment-opportunities">
+        <noscript><img src="/img/featured/investment-icon.png" /></noscript>
+        <h3>International Investment Opportunities</h3>
+        <p>Information on Ecuador and a project including pine and eucalyptus. Total size is 23,000 hectares and located in the Andes and the lowlands. Investment structure can be tailored to the investors&rsquo; needs.</p>
+      </a>
+    </li>
+
+    <!-- Item 3 -->
+    {% assign icon_url = '/img/featured/new-features-icon.png' | asset_url %}
+    {% assign retina_icon_url = '/img/featured/new-features-icon.png' | asset_url %}
+    <li data-interchange="[{{ icon_url }}, (default)], [{{ retina_icon_url }}, (retina)]">
+      <a href="/news-events-and-other-information">
+        <noscript><img src="{{ icon_url }}" /></noscript>
+        <h3>News, Events <span class="amp">&amp;</span> Other Information</h3>
+        <p>
+          A powerpoint is available for new investors to the asset class. The 3rd World Teak Conference will
+          be held in Guayaquil, Ecuador May 11&ndash;15, 2015
+        </p>
+      </a>
+    </li>
+    </li>
+  </ul>
+</section> <!-- End of Featured Section -->
+
+
+<!-- Services & Expertise Section -->
+<section id="services" class="full-width">
+  <div class="row">
+    <h1>World Forest Investment, Inc. provides services for a wide spectrum of issues regarding sound forestry business and investment. Our experience is broad and varied domestically and internationally.</h1>
+    <h2 class="subheader">Some of areas of expertise include:</h2>
+
+    <ul class="small-block-grid-1 large-block-grid-3">
+      <li>
+        <a href="forestland-brokerage">
+          <h4>Forestland Brokerage</h4>
+          <p>Licensed real estate broker in Oregon &amp; Washington.</p>
+        </a>
+      </li>
+      <li>
+        <a href="latin-america-services">
+          <h4>Latin America Services</h4>
+          <p>Investigation, property and operations inspection, observance and reporting of findings, financial reporting and analysis for forest investments.</p>
+        </a>
+      </li>
+      <li>
+        <a href="forestland-transactions">
+          <h4>Forestland Transactions</h4>
+          <p>Discovery, evaluation, financing, negotiating, due diligence and closing of forestland for investment. Strategy development, marketing, and negotiations for forestland sales.</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section> <!-- End of Services & Expertise Section -->
