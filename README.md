@@ -47,8 +47,9 @@ bundle
 ## Development
 
 Run the local server with
+
 ```bash
-bundle exec middleman server
+bundle exec middleman
 ```
 
 ## Deploy
