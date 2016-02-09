@@ -1,0 +1,127 @@
+@import "common";
+//
+// Index Page
+///
+
+.index {
+
+  //
+  // Masthead Section
+  ///
+
+  #masthead {
+
+    // Structure
+
+    background-position: center 10%;
+
+    h1 {
+      margin-bottom: 54px;
+    }
+
+
+    // Typography
+
+    h1 {
+      font-family: "Georgia", serif;
+      font-size: 21px;
+      font-style: italic;
+    }
+
+    form {
+      padding: 0 0.9375rem 0 0.9375rem;
+    }
+
+    form h4 {
+      font-size: 20px;
+    }
+
+
+    // Decoration
+
+    form {
+      input {
+        opacity: 0.8;
+      }
+      .button {
+        background-color: $wfi_green;
+        &:hover {
+          background-color: mix($wfi_green, $oil)
+        }
+      }
+    }
+  }
+
+
+
+  //
+  // Featured Section
+  ///
+
+  #featured {
+
+    // Structure
+
+    padding: $row_padding;
+
+    li {
+      @include background-size(56px);
+      padding-top: 75px;
+      background-repeat: no-repeat;
+      background-position: center top;
+    }
+
+
+    // Typography
+
+    li {
+      h3, p {
+        text-align: center;
+      }
+
+      h3 {
+        font-weight: 200;
+      }
+    }
+  }
+
+
+
+  //
+  // Services & Expertise Section
+  ///
+
+  #services {
+
+    // Structure
+
+    background-color: $grey_light;
+
+    & > .row {
+      padding: $row_padding;
+    }
+
+
+    // Typography
+
+    h1, h2 {
+      font-family: "Georgia", serif;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    h2 {
+      font-style: italic;
+    }
+
+    h1+h2 {
+      margin-bottom: 42px;
+    }
+
+    li {
+      h4, p {
+        text-align: center;
+      }
+    }
+  }
+}

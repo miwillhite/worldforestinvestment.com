@@ -1,0 +1,43 @@
+//
+// Latin America Services
+///
+
+.latin-america-services {
+
+  #masthead {
+    background-attachment: scroll;
+    background-position: center 10%;
+    h5, abbr {
+      color: $wfi_yellow;
+    }
+  }
+
+  #more-information {
+  }
+
+  #services {
+    background: $grey_light;
+    padding: $row_padding;
+
+    h2 + h5 {
+      margin-bottom: 1.6875rem;
+    }
+
+    ul {
+      li {
+        margin-bottom: 1rem;
+      }
+    }
+
+    & + .row {
+      padding: $row_padding;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  #contact-and-rates {
+    background: $grey_light;
+    padding: $row_padding;
+  }
+}

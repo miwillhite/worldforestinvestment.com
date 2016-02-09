@@ -3,7 +3,7 @@ page: index
 ---
 
 <!-- Masthead Section -->
-<section id="masthead" class="full-width" data-interchange="[{{ '/img/masthead.jpg' | asset_url }}, (default)]">
+<section id="masthead" class="full-width" data-interchange="[<%= asset_path :images, 'masthead.jpg' %>, (default)]">
   <div class="row">
     <!-- Mission Statement -->
     <h1 class="large-12 columns">
@@ -41,7 +41,7 @@ page: index
   <ul class="small-block-grid-1 large-block-grid-3">
 
     <!-- Item 1 -->
-    <li data-interchange="[{{ '/img/featured/tree-icon.png' | asset_url }}, (default)], [{{ '/img/featured/tree-icon@2x.png' | asset_url }}, (retina)]">
+    <li data-interchange="[<%= asset_path :images, 'featured/tree-icon.png' %>, (default)], [<%= asset_path :images, 'featured/tree-icon@2x.png' %>, (retina)]">
       <a href="/forestland-for-sale">
         <noscript><img src="/img/featured/tree-icon.png" /></noscript>
         <h3>Pacific Northwest Forestland for Sale</h3>
@@ -53,9 +53,7 @@ page: index
     </li>
 
     <!-- Item 2 -->
-    {% assign icon_url = '/img/featured/investment-icon.png' | asset_url %}
-    {% assign retina_icon_url = '/img/featured/investment-icon@2x.png' | asset_url %}
-    <li data-interchange="[{{ icon_url }}, (default)], [{{ retina_icon_url }}, (retina)]">
+    <li data-interchange="[<%= asset_path :images, 'featured/investment-icon.png' %>, (default)], [<%= asset_path :images, 'featured/investment-icon@2x.png' %>, (retina)]">
       <a href="/international-investment-opportunities">
         <noscript><img src="/img/featured/investment-icon.png" /></noscript>
         <h3>International Investment Opportunities</h3>
@@ -64,9 +62,7 @@ page: index
     </li>
 
     <!-- Item 3 -->
-    {% assign icon_url = '/img/featured/new-features-icon.png' | asset_url %}
-    {% assign retina_icon_url = '/img/featured/new-features-icon.png' | asset_url %}
-    <li data-interchange="[{{ icon_url }}, (default)], [{{ retina_icon_url }}, (retina)]">
+    <li data-interchange="[<%= asset_path :images, 'featured/new-features-icon.png' %>, (default)], [<%= asset_path :images, 'featured/new-features-icon.png' %>, (retina)]">
       <a href="/news-events-and-other-information">
         <noscript><img src="{{ icon_url }}" /></noscript>
         <h3>News, Events <span class="amp">&amp;</span> Other Information</h3>

@@ -1,0 +1,30 @@
+//
+// Navigation
+///
+
+.top-bar {
+
+  // Structure
+
+  .name h1 a {
+    color: $wfi_yellow;
+  }
+
+  .title-area .name a {
+    @include background-size(36px 32px);
+    background-repeat: no-repeat;
+    padding-left: 48px;
+    background-position: 0px 6px;
+  }
+
+
+  // Typography
+
+  .top-bar-section .left .forestland-for-sale > a span {
+    color: $wfi_yellow;
+  }
+}
+
+#resume-link[href$='.pdf']:after {
+  color: $wfi_yellow;
+}

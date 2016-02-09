@@ -1,67 +1,252 @@
 @charset "utf-8";
 @import "normalize";
+@import "foundation";
 
-body {
-  background: #ECC561;
-  text-align: center;
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1em;
-}
+// Helpers
+@import "common";
+@import "colors";
+@import "mixins";
 
-.logo img {
-  height: 18.75em;
-  margin-top: 6em;
-}
+// Page / Section specific styles
+@import "navigation";
+@import "index";
+@import "forestland-for-sale";
+@import "news-events-and-other-information";
+@import "latin-america-services";
+@import "international-investment-opportunities";
+@import "forestland-transactions";
 
-h1 {
-  color: rgba(0,0,0,0.5);
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1.8em;
-  font-weight: 400;
-  margin: 0;
-}
 
-.doc {
-  margin: 3em 0;
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1.1em;
-  font-weight: 300;
+
+//
+// A/B Testing
+///
+
+#test-panel {
+  padding: 5px;
+  position: fixed;
+  top: 2%;
+  right: 2%;
 
   a {
-    border: 1px solid white;
-    border-radius: 3px;
-    padding: 0.75em 0.7em;
-    color: white;
-    text-decoration: none;
-    transition: color 0.1s linear;
-    &:hover {
-      background: rgba(0,0,0,0.2);
+    margin-bottom: 0;
+  }
+}
+
+//
+// Global
+///
+
+// Structure
+
+a.static {
+  cursor: default;
+}
+
+.classy {
+  font-family: "Georgia", serif;
+}
+
+a.inline {
+  margin-bottom: 0.3rem;
+
+  &.left {
+    margin-right: 1rem;
+  }
+
+  &.right {
+    margin-left: 1rem;
+  }
+}
+
+.side-nav li.divider {
+  border-top-color: $grey_light;
+}
+
+
+// Special br's
+br {
+  &.visible-for-small-only {
+    // FIXME
+    // @media #{$medium-up} {
+    //   display: none;
+    // }
+  }
+}
+
+
+// Callouts
+.panel.callout {
+  background-color: $wfi_yellow;
+  border-color: $grey_light;
+}
+
+
+// Row, padding
+.row.padded {
+  padding: $row_padding;
+}
+
+.row.vertically-padded {
+  padding: $row_padding;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.side-nav .button {
+  margin: .4375rem .875rem;
+}
+
+#masthead {
+  &.full-width {
+    @include cover-background;
+
+    abbr, p, h1, h2, h3, h4 {
       color: white;
-      transition: all 0.15s linear;
+    }
+
+    & > .row {
+      padding: $masthead_padding;
+    }
+  }
+
+  &:not(.full-width) {
+    margin-top: 30px;
+  }
+
+  .row {
+    position: relative;
+
+    .photo-description {
+      position: absolute;
+      bottom: 0;
+      right: 0;
     }
   }
 }
 
-.welcome {
-  -webkit-animation-name: welcome;
-  -webkit-animation-duration: .9s;
+
+// Typography
+
+h1, h2, h3, h4, h5, h6, p {
+  color: $grey_dark;
 }
 
-@-webkit-keyframes welcome {
-  from {
-    -webkit-transform: scale(0);
-    opacity: 0;
-  }
-  50% {
-   -webkit-transform: scale(0);
-   opacity: 0;
-  }
-  82.5% {
-    -webkit-transform: scale(1.03);
-    -webkit-animation-timing-function: ease-out;
-    opacity: 1;
-  }
-  to {
-    -webkit-transform: scale(1);
+.amp {
+  font-family: Baskerville, 'Goudy Old Style', Palatino, 'Book Antiqua', serif;
+  font-style: italic;
+  font-weight: normal;
+}
+
+sup {
+  text-transform: uppercase;
+  font-size: .3rem;
+}
+
+[href$='.pdf']:after {
+  @include link-destination-indicator('PDF');
+}
+
+.top-bar-section {
+  li.active:not(.has-form) {
+    a:not(.button) {
+      background: $wfi_green;
+
+      &:hover {
+        background: mix($wfi_green, $oil);
+      }
+    }
   }
 }
+
+.side-nav {
+  li a:not(.button) {
+    color: $wfi_green;
+    &:hover {
+      color: mix($wfi_green, $oil);
+    }
+  }
+}
+
+.row p a {
+  text-decoration: underline;
+}
+
+
+
+#masthead {
+  .row {
+    h1, h2, h3, h4, h5, h6, p {
+     text-shadow: 2px 2px 18px mix($wfi_green, $oil)
+    }
+
+    .photo-description {
+      font-size: 0.6875rem;
+      color: $wfi_yellow;
+    }
+  }
+
+  &.full-width.sans-image {
+    // background: $white_smoke; FIXME
+    h1, h2, h3, h4, h5, h6, p {
+      text-shadow: none;
+      color: $oil;
+    }
+  }
+}
+
+
+// Decoration
+
+body {
+  background: url('/images/noisy-texture.png')
+}
+
+.button {
+  background-color: $wfi_green;
+  border-color: mix($wfi_green, $oil);
+
+  &:focus, &:hover {
+    background-color: mix($wfi_green, $oil);
+  }
+}
+
+a {
+  color: $wfi_green;
+  &:hover {
+    color: mix($wfi_green, $oil);
+  }
+}
+
+
+// $thumb-box-shadow-hover: 0 0 6px 1px $white_smoke; FIXME
+.th:hover, .th:focus {
+  box-shadow: 0 0 6px 1px $grey_light;
+}
+
+
+//
+// Error pages
+///
+
+#page-not-found {
+  margin-top: 5rem;
+}
+
+
+//
+// Modal Dialogs
+///
+
+// Structure
+#form-submission-success-modal, #form-submission-failure-modal {
+  img {
+    margin-bottom: 20px;
+  }
+}
+
+// Typography
+#form-submission-failure-modal .message {
+  color: $wfi_red;
+}
+

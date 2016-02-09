@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en" id="<%= current_page.data.page %>">
+<html class="no-js" lang="en">
   <head>
     <meta name="google-site-verification" content="lPQog4EO1XbhQC-eBDBdrMZI_h-_cv-pqR5M7agsmH0" />
     <meta charset="utf-8">
@@ -34,15 +34,15 @@
     <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
 
     <!-- Styles -->
-    <%= stylesheet_link_tag "assets/css/foundation.css" %>
-    <%= stylesheet_link_tag "assets/css/main.css" %>
-    <%= javascript_include_tag :all %>
+    <%= stylesheet_link_tag :site %>
 
-    <!-- Preloaded JS -->
-    <%= javascript_include_tag "modernizr" %>
+    <%= yield_content :stylesheets %>
+
+    <!-- JavaScripts -->
+    <%= javascript_include_tag 'modernizr' %>
   </head>
-  <body>
-    <!--[if lte IE 8]>
+  <body class="<%= page_classes %>">
+    <!--[if lte IE 9]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
@@ -55,7 +55,7 @@
         <ul class="title-area">
           <li class="name">
             <h1>
-              <a data-interchange="[{{ '/img/wfi-nav-logo.png' | asset_url }}, (default)], [{{ '/img/wfi-nav-logo@2x.png' | asset_url }}, (retina)]" href="/">
+              <a data-interchange="[<%= asset_path :images, 'wfi-nav-logo.png' %>, (default)], [<%= asset_path :images, 'wfi-nav-logo@2x.png' %>, (retina)]" href="/">
                 World Forest Investment
               </a>
             </h1>
@@ -159,7 +159,7 @@
     <div id="form-submission-success-modal" class="reveal-modal" data-reveal aria-labelledby="Thanks!" aria-hidden="true" role="dialog">
       <div class="text-center">
         <!-- Icon -->
-        <img text-center data-interchange="[{{ '/img/success-icon.png' | asset_url }}, (default)], [{{ '/img/success-icon@2x.png' | asset_url }}, (retina)]">
+        <img text-center data-interchange="[<%= asset_path :images, 'success-icon.png' %>, (default)], [<%= asset_path :images, 'success-icon@2x.png' %> (retina)]">
 
         <!-- Message -->
         <h3 class="message"><!-- Populated via js --></h3>
@@ -175,7 +175,7 @@
 
       <div class="text-center">
         <!-- Icon -->
-        <img text-center data-interchange="[{{ '/img/bug-icon.png' | asset_url }}, (default)], [{{ '/img/bug-icon@2x.png' | asset_url }}, (retina)]">
+        <img text-center data-interchange="[<%= asset_path :images, 'bug-icon.png' %>, (default)], [<%= asset_path :images, 'bug-icon@2x.png' %>, (retina)]">
 
         <!-- Message -->
         <h3 class="message"><!-- Populated via js --></h3>
@@ -184,5 +184,29 @@
       <!-- Close button -->
       <a class="close-reveal-modal" aria-label="Close">&#215;</a>
     </div> <!-- End of Failed form submission dialog -->
+
+
+    <!-- JavaScripts -->
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <%= javascript_include_tag 'foundation' %>
+    <%= javascript_include_tag :all %>
+
+    <%= yield_content :javascripts %>
+
+    <script>
+    $(document).foundation();
+    </script>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-61415105-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
 	</body>
 </html>

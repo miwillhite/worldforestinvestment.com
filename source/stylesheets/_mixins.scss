@@ -1,0 +1,38 @@
+//
+// Mixins
+///
+
+@mixin background-size($size) {
+  -webkit-background-size: $size;
+  -moz-background-size: $size;
+  -o-background-size: $size;
+  background-size: $size;
+}
+
+@mixin cover-background {
+  background-color: $oil;
+  background-repeat: no-repeat;
+  background-position: center center;
+  @include background-size(cover);
+}
+
+// https://gist.github.com/garyharan/957284
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+@mixin link-destination-indicator($type) {
+  content: '[' + $type + ']';
+  font-size: .5875em;
+  vertical-align: super;
+  letter-spacing: .06rem;
+  padding-left: .6875em;
+}
