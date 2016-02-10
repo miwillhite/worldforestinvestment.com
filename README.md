@@ -13,44 +13,44 @@
 
 1. Install Xcode tools
 
-```bash
-xcode-select --install
-```
+  ```
+  xcode-select --install
+  ```
 
 2. Install homebrew
 
-```bash
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
+  ```
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  ```
 
 3. Install chruby and ruby-install
 
-```bash
-brew install chruby ruby-install
-```
+  ```
+  brew install chruby ruby-install
+  ```
 
 4. Enable auto-switching: https://github.com/postmodern/chruby#auto-switching
 
 5. Install the Ruby specified in `.ruby-version`
 
-```bash
-ruby-install ruby 2.x.x
-```
+  ```
+  ruby-install ruby 2.x.x
+  ```
 
 6. Install bundler and required gems
 
-```bash
-gem install bundle
-bundle
-```
+  ```
+  gem install bundle
+  bundle
+  ```
 
 ## Development
 
 Run the local server with
 
-```bash
-bundle exec middleman
-```
+  ```
+  bundle exec middleman
+  ```
 
 ## Deploy
 
