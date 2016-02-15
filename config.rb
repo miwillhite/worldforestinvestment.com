@@ -37,3 +37,11 @@ configure :build do
   # Minify Javascript on build
   # activate :minify_javascript
 end
+
+###
+# Deployment
+###
+
+activate :s3_sync do |s3_sync|
+  s3_sync.bucket = 'worldforestinvestment.com'
+end
