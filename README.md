@@ -54,7 +54,11 @@ Run the local server with
 
 ## Deploy
 
-TODO
+Sync with AWS S3 host
+
+  ```
+  bundle exec middleman s3_sync
+  ```
 
 
 ## Troubleshooting
