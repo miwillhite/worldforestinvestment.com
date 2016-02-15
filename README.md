@@ -52,17 +52,17 @@
 
 Run the local server with
 
-  ```
-  bundle exec middleman
-  ```
+```
+bundle exec middleman
+```
 
 ## Deploy
 
 Sync with AWS S3 host
 
-  ```
-  bundle exec middleman s3_sync --build # NOTE: If this fails with an error, run first: bundle exec middleman build
-  ```
+```
+bundle exec middleman s3_sync --build # NOTE: If this fails with an error, run first: bundle exec middleman build
+```
 
 
 ## Troubleshooting
