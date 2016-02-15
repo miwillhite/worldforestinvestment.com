@@ -1,5 +1,9 @@
 # World Forest Investment Marketing Website
 
+## Resources
+
+[Staging Server](http://worldforestinvestment.com.s3-website-us-east-1.amazonaws.com/)
+
 ## Requirements
 
 * [homebrew](http://brew.sh/)
