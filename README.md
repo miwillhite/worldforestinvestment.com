@@ -57,7 +57,7 @@ Run the local server with
 Sync with AWS S3 host
 
   ```
-  bundle exec middleman s3_sync
+  bundle exec middleman s3_sync --build # NOTE: If this fails with an error, run first: bundle exec middleman build
   ```
 
 
