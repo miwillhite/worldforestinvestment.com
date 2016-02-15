@@ -1,6 +1,7 @@
 @charset "utf-8";
-@import "normalize";
-@import "foundation";
+@import "foundation/normalize";
+@import "foundation/foundation";
+@import "foundation/foundation/components/visibility";
 
 // Helpers
 @import "common";
@@ -67,10 +68,9 @@ a.inline {
 // Special br's
 br {
   &.visible-for-small-only {
-    // FIXME
-    // @media #{$medium-up} {
-    //   display: none;
-    // }
+    @media #{$medium-up} {
+      display: none;
+    }
   }
 }
 
@@ -187,7 +187,7 @@ sup {
   }
 
   &.full-width.sans-image {
-    // background: $white_smoke; FIXME
+    background: $white_smoke;
     h1, h2, h3, h4, h5, h6, p {
       text-shadow: none;
       color: $oil;
@@ -219,7 +219,7 @@ a {
 }
 
 
-// $thumb-box-shadow-hover: 0 0 6px 1px $white_smoke; FIXME
+$thumb-box-shadow-hover: 0 0 6px 1px $white_smoke;
 .th:hover, .th:focus {
   box-shadow: 0 0 6px 1px $grey_light;
 }
