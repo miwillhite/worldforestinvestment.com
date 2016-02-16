@@ -1,0 +1,22 @@
+images:
+  - slideshow1.jpg
+  - slideshow2.jpg
+  - slideshow3.jpg
+  - slideshow4.jpg
+  - slideshow5.jpg
+
+documents:
+  - title : Aerial Photo
+    href  : '#.pdf'
+  - title : Survey
+    href  : '#.pdf'
+  - title : PTR
+    href  : '#.pdf'
+  - title : Directions and Description
+    href  : '#.pdf'
+  - title : Timber Cruise
+    href  : '#.pdf'
+  - title : Taxlot Map
+    href  : '#.pdf'
+  - title : Real Estate Disclosure Form
+    href  : '#.pdf'
