@@ -1,0 +1,7 @@
+<% [57, 114, 72, 144, 60, 120, 76, 152].each do |dim| %>
+<%= favicon_tag "images/favicon/apple-touch-icon-#{dim}x#{dim}.png", rel: 'apple-touch-icon-precomposed', sizes: "#{dim}x#{dim}" %>
+<% end %>
+
+<% [96, 32, 16, 128].each do |dim| %>
+<%= favicon_tag "images/favicon/favicon-#{dim}x#{dim}.png", rel: 'icon', type:'image/png', sizes: "#{dim}x#{dim}" %>
+<% end %>
