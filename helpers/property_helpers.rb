@@ -1,7 +1,7 @@
 module PropertyHelpers
 
-  def slideshow
-    images = data.properties.apiary.images
+  def slideshow(property)
+    images = property.images
 
     content_tag(:div, class: 'ss-slides') do
       images.map do |img|
@@ -17,14 +17,17 @@ module PropertyHelpers
     end
   end
 
-  def document_list
-    documents = data.properties.apiary.documents
+  def document_list(property)
+    documents = property.documents
 
     documents.map do |doc|
       content_tag(:li) do |li|
         link_to(doc.title, doc.href)
       end
     end.join('')
+  end
+
+  def gallery(property)
   end
 
 end

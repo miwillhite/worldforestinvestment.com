@@ -1,13 +1,13 @@
 ---
-title: Apiary Track
+title: property.title
 ---
 
 <!-- Masthead Section -->
 <section class="full-width sans-image" id="masthead">
   <div class="row">
     <div class="large-12 columns">
-      <h1>Apiary Forestland Sale</h1>
-      <h2>$574,500</h2>
+      <h1><%= property.title %></h1>
+      <h2><%= property.listing_price %></h2>
     </div>
   </div>
 </section> <!-- End of Masthead Section -->
@@ -18,7 +18,7 @@ title: Apiary Track
 
   <!-- Side Navigation -->
   <ul class="side-nav small-3 left" role="navigation">
-    <%= document_list %>
+    <%= document_list property %>
     <li>
       <a href="#.zip" class="button small radius">Download All Property Files</a>
     </li>
@@ -63,20 +63,16 @@ title: Apiary Track
   <div class="small-9 columns">
 
 
-    <%= slideshow %>
+    <%= slideshow property %>
 
-    <h3>100 acres of well-stocked forestland for sale in Columbia County</h3>
-    <p>
-      Quality property with 695 MBF of merchantable timber. Age classes of 14&ndash;22 years of timber reproduction. Very
-      nice property that will make an excellent first time buyer tree farm or addition to existing holdings. Legal easement
-      for access; the entire property is accessible. See <a href="#">Directions and Description</a> for more information.
-    </p>
+    <h3><%= property.subtitle %></h3>
+    <p><%= property.description %></p>
 
     <h5>Property highlights include:</h5>
     <ul>
-      <li>Gentle topography</li>
-      <li>Highly productive soils</li>
-      <li>Well-laid out road system</li>
+      <%- property.highlights.each do |hl| %>
+      <li><%= hl %></li>
+      <%- end %>
     </ul>
 
 
