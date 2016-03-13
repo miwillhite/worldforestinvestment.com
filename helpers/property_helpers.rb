@@ -27,7 +27,15 @@ module PropertyHelpers
     end.join('')
   end
 
-  def gallery(property)
+  def gallery_for(property)
+    property.images.map do |img|
+      path = current_path.split('/')[0..-2]
+      content_tag(:li) do |li|
+        link_to('', class: 'th') do
+          image_tag(File.join(path, 'images', img))
+        end
+      end
+    end.join('')
   end
 
 end
