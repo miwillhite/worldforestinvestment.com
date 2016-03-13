@@ -1,6 +1,6 @@
 module PropertyHelpers
 
-  def slideshow(property)
+  def slideshow_for(property)
     images = property.images
 
     content_tag(:div, class: 'ss-slides') do
@@ -17,7 +17,7 @@ module PropertyHelpers
     end
   end
 
-  def document_list(property)
+  def document_list_for(property)
     documents = property.documents
 
     documents.map do |doc|

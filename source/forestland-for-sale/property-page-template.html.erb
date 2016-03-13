@@ -18,7 +18,7 @@ title: property.title
 
   <!-- Side Navigation -->
   <ul class="side-nav small-3 left" role="navigation">
-    <%= document_list property %>
+    <%= document_list_for property %>
     <li>
       <a href="#.zip" class="button small radius">Download All Property Files</a>
     </li>
@@ -63,7 +63,7 @@ title: property.title
   <div class="small-9 columns">
 
 
-    <%= slideshow property %>
+    <%= slideshow_for property %>
 
     <h3><%= property.subtitle %></h3>
     <p><%= property.description %></p>
