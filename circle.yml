@@ -5,5 +5,5 @@ deployment:
   staging:
     branch: /feature|chore|enhancement/
     commands:
-      - mkdir -p build/forestland-for-sale
+      - rm -rf ./forestland-for-sale
       - bundle exec middleman s3_sync --verbose
