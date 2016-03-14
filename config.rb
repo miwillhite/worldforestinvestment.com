@@ -33,16 +33,6 @@ property_listings.map do |listing|
         ignore: true
 end
 
-# Bootstrap the index page with property data
-proxy '/forestland-for-sale',
-      '/forestland-for-sale/index.html',
-      layout: :layout,
-      locals: {
-        active_listings: property_listings.reject(&:sold),
-        inactive_listings: property_listings.select(&:sold)
-      },
-      ignore:true
-
 ready do
   # Augment the page data with the generate listing path
   # https://github.com/middleman/middleman/issues/1110#issuecomment-30109174
@@ -52,6 +42,13 @@ ready do
       title: listing.title
     }
   end
+
+  # Augment the index page with listing data
+  resource = sitemap.find_resource_by_path 'forestland-for-sale/index.html'
+  resource.add_metadata locals: {
+    active_listings: property_listings.reject(&:sold),
+    inactive_listings: property_listings.select(&:sold)
+  }
 end
 
 # Build-specific configuration
