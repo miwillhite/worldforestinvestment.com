@@ -20,109 +20,10 @@ title: Forestland for Sale
   <div class="large-12 columns">
     <!-- Property listings -->
     <dl class="selling test test-a">
-      <dt>
-        <h4>
-          <a href="/forestland-for-sale/apiary">Apiary Tract: 100 acres in Columbia County, OR</a>
-        </h4>
-      </dt>
-      <dd>
-        <div class="thumbs">
-          <a class="th" href="http://worldforestinvestment.com/apiary/images/slideshow1.jpg">
-            <img src="http://worldforestinvestment.com/apiary/images/slideshow1.jpg">
-          </a>
-          <a class="th" href="http://worldforestinvestment.com/apiary/images/slideshow2.jpg">
-            <img src="http://worldforestinvestment.com/apiary/images/slideshow2.jpg">
-          </a>
-          <a class="th" href="http://worldforestinvestment.com/apiary/images/slideshow3.jpg">
-            <img src="http://worldforestinvestment.com/apiary/images/slideshow3.jpg">
-          </a>
-        </div>
-        <p>
-          Quality property with 695 MBF of merchantable timber. Age classes of 14-22 years of timber reproduction.
-          Very nice property that will make an excellent first time buyer tree farm or addition to existing holdings.
-          Legal easement for access; the entire property is accessible.
-        </p>
-      </dd>
-
-      <dt>
-        <h4>
-          <a href="http://worldforestinvestment.com/deepriver">Deep River: 81.8 acres in Wahkaikum County, WA</a>
-        </h4>
-      </dt>
-      <dd>
-        <div class="thumbs">
-          <a class="th" href="http://worldforestinvestment.com/deepriver/images/slideshow2.JPG">
-            <img src="http://worldforestinvestment.com/deepriver/images/slideshow2.JPG">
-          </a>
-          <a class="th" href="http://worldforestinvestment.com/deepriver/images/slideshow4.JPG">
-            <img src="http://worldforestinvestment.com/deepriver/images/slideshow4.JPG">
-          </a>
-          <a class="th" href="http://worldforestinvestment.com/deepriver/images/slideshow1.JPG">
-            <img src="http://worldforestinvestment.com/deepriver/images/slideshow1.JPG">
-          </a>
-        </div>
-        <p>
-          81.8 acres in Wahkiakum County, Washington, located 50 miles from Longview, WA, 40 miles to Raymond and 25 miles to Astoria.
-          1,500 MBF; about 55 years old. Current FPA. High Site. Extensive road system in place; dry weather.
-          Topography is variable. Inspections can be made anytime. Sealed bid process.
-        </p>
-      </dd>
-
-      <dt>
-        <h4>
-          <a href="http://worldforestinvestment.com/coldsprings">Cold Springs: 116 acres in Clackamas County, OR</a>
-        </h4>
-      </dt>
-      <dd>
-        <div class="thumbs">
-          <a class="th" href="http://worldforestinvestment.com/coldsprings/images/slideshow1.JPG">
-            <img src="http://worldforestinvestment.com/coldsprings/images/slideshow1.JPG">
-          </a>
-          <a class="th" href="http://worldforestinvestment.com/coldsprings/images/slideshow2.JPG">
-            <img src="http://worldforestinvestment.com/coldsprings/images/slideshow2.JPG">
-          </a>
-          <a class="th" href="http://worldforestinvestment.com/coldsprings/images/slideshow3.JPG">
-            <img src="http://worldforestinvestment.com/coldsprings/images/slideshow3.JPG">
-          </a>
-        </div>
-        <p>
-          Professionally managed 116 acre property for sale - 1,371 MBF of merchantable timber with a new cruise.
-          Also includes 26 acres of timber reproduction at ages 5-12 of various species. Property has a good road system
-          throughout, and it has been surveyed. Access to the majority of the property is very good. Most neighbors are
-          woodland owners with some frontage with BLM lands. There is also a modest home present with a tenant.
-        </p>
-      </dd>
+      <%- active_listings.each do |listing| %>
+        <%= partial(:active_listing, locals: { property: listing }) %>
+      <%- end %>
     </dl>
-
-    <ul class="selling test test-b small-block-grid-3 text-center">
-      <li>
-        <a href="http://worldforestinvestment.com/apiary" class="th">
-          <img src="http://worldforestinvestment.com/apiary/images/slideshow1.jpg">
-        </a>
-        <h4>Apiary Tract: 100 acres in Columbia County, OR</h4>
-        <p>
-          Quality property with 695 MBF of merchantable timber. Age classes of 14-22 years of timber reproduction.
-        </p>
-      </li>
-      <li>
-        <a href="http://worldforestinvestment.com/deepriver" class="th">
-          <img src="http://worldforestinvestment.com/deepriver/images/slideshow2.JPG">
-        </a>
-        <h4>Deep River: 81.8 acres in Wahkaikum County, WA</h4>
-        <p>
-          81.8 acres in Wahkiakum County, Washington, located 50 miles from Longview, WA, 40 miles to Raymond and 25 miles to Astoria.
-        </p>
-      </li>
-      <li>
-        <a href="http://worldforestinvestment.com/coldsprings" class="th">
-          <img src="http://worldforestinvestment.com/coldsprings/images/slideshow1.JPG">
-        </a>
-        <h4>Cold Springs: 116 acres in Clackamas County, OR</h4>
-        <p>
-          Professionally managed 116 acre property for sale - 1,371 MBF of merchantable timber with a new cruise.
-        </p>
-      </li>
-    </ul>
 
     <!-- Disclosures Section -->
     <section id="disclosures">
@@ -144,59 +45,9 @@ title: Forestland for Sale
     </section><!-- End of Disclosures Section -->
 
     <dl class="sold">
-      <dt>
-        <span class="label alert round">Sold</span>
-        <a href="http://worldforestinvestment.com/apiary">Apiary Tract: 100 acres in Columbia County, OR</a>
-      </dt>
-      <dd>695 MBF timber and reproduction, quality property, high productivity, easily operable.</dd>
-
-      <dt>
-        <span class="label alert round">Sold</span>
-        <a href="http://worldforestinvestment.com/deepriver">Deep River: 81.8 acres in Wahkaikum County, WA</a>
-      </dt>
-      <dd>1,500 MBF</dd>
-
-      <dt>
-        <span class="label alert round">Sold</span>
-        <a href="http://worldforestinvestment.com/coldsprings">Cold Springs: 116 acres in Clackamas County, OR</a>
-      </dt>
-      <dd>1,371 MBF merchantable timber</dd>
-
-      <dt>
-        <span class="label alert round">Sold</span>
-        <a href="http://worldforestinvestment.com/sparkyslane">Sparky's Lane: 20 acre timber tract in Clackamas County, OR</a>
-      </dt>
-      <dd>Very nice property, high site, gentle topo, legal access, buildable, Clackamas County, 457-624 MBF</dd>
-
-      <dt>
-        <span class="label alert round">Sold</span>
-        <a href="http://worldforestinvestment.com/tunnel">Tunnel Tract: 5 acres of merchantable timber and reprod 14-25 years old, Washington County, OR</a>
-      </dt>
-      <dd>FOR TRADE</dd>
-
-      <dt>
-        <span class="label alert round">Sold</span>
-        <a href="http://worldforestinvestment.com/dolevalleysouth">Dole Valley South: 202 acres in Clark County, OR</a>
-      </dt>
-      <dd></dd>
-
-      <dt>
-        <span class="label alert round">Sold</span>
-        <a href="http://worldforestinvestment.com/lewisriver">Lewis River: 156 acres in Clark County, OR</a>
-      </dt>
-      <dd>Reprod</dd>
-
-      <dt>
-        <span class="label alert round">Sold</span>
-        <a href="http://worldforestinvestment.com/dolevalleynorth">Dole Valley North: 208 acres in Clark County, OR</a>
-      </dt>
-      <dd>Reprod</dd>
-
-      <dt>
-        <span class="label alert round">Sold</span>
-        <a href="http://worldforestinvestment.com/thornton">Thornton Merchantable Timber Tract: 86 acres in Lincoln County</a>
-      </dt>
-      <dd>1,700 MBF</dd>
+      <%- inactive_listings.each do |listing| %>
+        <%= partial(:inactive_listing, locals: { property: listing }) %>
+      <%- end %>
     </dl>
   </div>
 </section><!-- End of Forest Tracts Section -->

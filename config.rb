@@ -16,17 +16,32 @@ page '/*.txt', layout: false
 # page "/path/to/file.html", layout: :otherlayout
 
 property_listings = Dir.entries('./data/properties/').map do |file|
-   Middleman::Util::EnhancedHash.load("./data/properties/#{file}") if file.length > 2
+  if file.length > 2
+    data = Middleman::Util::EnhancedHash.load("./data/properties/#{file}")
+    data.merge({ url: "/forestland-for-sale/#{data.title.parameterize}" })
+  end
 end.compact
 
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
-property_listings.map do |property|
-  proxy "/forestland-for-sale/#{property.title.parameterize}",
+
+# Create a page for each property listing
+property_listings.map do |listing|
+  proxy listing.url,
         '/forestland-for-sale/property-page-template.html',
         layout: :layout,
-        locals: { property: property },
+        locals: { property: listing },
         ignore: true
 end
+
+# Bootstrap the index page with property data
+proxy '/forestland-for-sale',
+      '/forestland-for-sale/index.html',
+      layout: :layout,
+      locals: {
+        active_listings: property_listings.reject(&:sold),
+        inactive_listings: property_listings.select(&:sold)
+      },
+      ignore:true
 
 # Build-specific configuration
 configure :build do
