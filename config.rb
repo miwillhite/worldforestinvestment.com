@@ -43,6 +43,17 @@ proxy '/forestland-for-sale',
       },
       ignore:true
 
+ready do
+  # Augment the page data with the generate listing path
+  # https://github.com/middleman/middleman/issues/1110#issuecomment-30109174
+  property_listings.each do |listing|
+    resource = sitemap.find_resource_by_path listing.url
+    resource.add_metadata page: {
+      title: listing.title
+    }
+  end
+end
+
 # Build-specific configuration
 configure :build do
   # Minify CSS on build
