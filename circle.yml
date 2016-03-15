@@ -5,4 +5,4 @@ deployment:
   staging:
     branch: /feature|chore|enhancement/
     commands:
-      - MM_ENV="staging" bundle exec middleman s3_sync -B -f
+      - true == true
