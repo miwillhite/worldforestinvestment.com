@@ -2,6 +2,8 @@ machine:
   ruby:
     version: 2.3.0
 deployment:
+  test: /feature|chore|enhancement/
+    - true == true
   staging:
     branch: /feature|chore|enhancement/
     commands:
