@@ -1,6 +1,9 @@
 machine:
   ruby:
     version: 2.3.0
+test:
+  override:
+    - echo "test"
 deployment:
   staging:
     branch: /feature.*|chore.*|enhancement.*/
