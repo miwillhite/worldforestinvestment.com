@@ -5,12 +5,12 @@ module PropertyHelpers
     path = current_path.split('/')[0..-2]
 
     content_tag(:div, class: 'ss-slides') do
-      images.map do |img|
+      images.map do |img_path|
 
         opts = { class: 'ss-slide' }
-        opts[:class] += ' hide' unless img == images.first
+        opts[:class] += ' hide' unless img_path == images.first
 
-        image_tag(File.join(path, 'images', img), opts)
+        image_tag(img_path, opts)
 
       end.join('')
     end
@@ -27,11 +27,10 @@ module PropertyHelpers
   end
 
   def gallery_for(property)
-    path = current_path.split('/')[0..-2]
-    property.images.map do |img|
+    property.images.map do |img_path|
       content_tag(:li) do |li|
         link_to('', class: 'th') do
-          image_tag(File.join(path, 'images', img))
+          image_tag(img_path)
         end
       end
     end.join('')
