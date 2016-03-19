@@ -66,4 +66,5 @@ end
 
 activate :s3_sync do |s3_sync|
   s3_sync.bucket = 'worldforestinvestment-staging.com'
+  s3_sync.delete = false
 end
