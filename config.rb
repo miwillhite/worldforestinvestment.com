@@ -53,18 +53,30 @@ end
 
 # Build-specific configuration
 configure :build do
-  # Minify CSS on build
-  # activate :minify_css
-
-  # Minify Javascript on build
-  # activate :minify_javascript
 end
 
-###
-# Deployment
-###
+configure :staging do
+  # Minify CSS on build
+  activate :minify_css
 
-activate :s3_sync do |s3_sync|
-  s3_sync.bucket = 'worldforestinvestment-staging.com'
-  s3_sync.delete = false
+  # Minify Javascript on build
+  activate :minify_javascript
+
+  activate :s3_sync do |s3_sync|
+    s3_sync.bucket = 'worldforestinvestment-staging.com'
+    s3_sync.delete = false
+  end
+end
+
+configure :production do
+  # Minify CSS on build
+  activate :minify_css
+
+  # Minify Javascript on build
+  activate :minify_javascript
+
+  activate :s3_sync do |s3_sync|
+    s3_sync.bucket = 'worldforestinvestment.com'
+    s3_sync.delete = false
+  end
 end

@@ -7,5 +7,17 @@ test:
 deployment:
   staging:
     branch: /feature.*|chore.*|enhancement.*/
+    environment:
+      AWS_ACCESS_KEY_ID: ${STAGING_AWS_ACCESS_KEY_ID}
+      AWS_SECRET_ACCESS_KEY: ${STAGING_AWS_SECRET_ACCESS_KEY}
+      MM_ENV: staging
+    commands:
+      - bundle exec middleman s3_sync
+  production:
+    branch: master
+    environment:
+      AWS_ACCESS_KEY_ID: ${PRODUCTION_AWS_ACCESS_KEY_ID}
+      AWS_SECRET_ACCESS_KEY: ${PRODUCTION_AWS_SECRECT_ACCESS_KEY}
+      MM_ENV: production
     commands:
       - bundle exec middleman s3_sync
