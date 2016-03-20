@@ -1,3 +1,6 @@
+require 'middleman-core/util/data'
+require 'active_support'
+
 ###
 # Page options, layouts, aliases and proxies
 ###
@@ -12,22 +15,41 @@ page '/*.txt', layout: false
 # With alternative layout
 # page "/path/to/file.html", layout: :otherlayout
 
+property_listings = Dir.entries('./data/properties/').map do |file|
+  if file.length > 2
+    data = Middleman::Util::EnhancedHash.load("./data/properties/#{file}")
+    data.merge({ url: "/forestland-for-sale/#{data.title.parameterize}" })
+  end
+end.compact
+
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
-# proxy "/this-page-has-no-template.html", "/template-file.html", locals: {
-#  which_fake_page: "Rendering a fake page with a local variable" }
 
-# General configuration
+# Create a page for each property listing
+property_listings.map do |listing|
+  proxy listing.url,
+        '/forestland-for-sale/property-page-template.html',
+        layout: :layout,
+        locals: { property: listing },
+        ignore: true
+end
 
-###
-# Helpers
-###
+ready do
+  # Augment the page data with the generate listing path
+  # https://github.com/middleman/middleman/issues/1110#issuecomment-30109174
+  property_listings.each do |listing|
+    resource = sitemap.find_resource_by_path listing.url
+    resource.add_metadata page: {
+      title: listing.title
+    }
+  end
 
-# Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+  # Augment the index page with listing data
+  resource = sitemap.find_resource_by_path 'forestland-for-sale/index.html'
+  resource.add_metadata locals: {
+    active_listings: property_listings.reject(&:sold),
+    inactive_listings: property_listings.select(&:sold)
+  }
+end
 
 # Build-specific configuration
 configure :build do
@@ -43,5 +65,6 @@ end
 ###
 
 activate :s3_sync do |s3_sync|
-  s3_sync.bucket = 'worldforestinvestment.com'
+  s3_sync.bucket = 'worldforestinvestment-staging.com'
+  s3_sync.delete = false
 end
