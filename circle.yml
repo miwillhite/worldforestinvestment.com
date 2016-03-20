@@ -8,8 +8,8 @@ deployment:
   staging:
     branch: /feature.*|chore.*|enhancement.*/
     commands:
-      - AWS_ACCESS_KEY_ID=${STAGING_AWS_ACCESS_KEY_ID} AWS_SECRET_ACCESS_KEY=${STAGING_AWS_SECRET_ACCESS_KEY} bundle exec middleman s3_sync -e staging
+      - AWS_ACCESS_KEY_ID=${STAGING_AWS_ACCESS_KEY_ID} AWS_SECRET_ACCESS_KEY=${STAGING_AWS_SECRET_ACCESS_KEY} bundle exec middleman s3_sync -B -e staging
   production:
     branch: master
     commands:
-      - AWS_ACCESS_KEY_ID=${PRODUCTION_AWS_ACCESS_KEY_ID} AWS_SECRET_ACCESS_KEY=${PRODUCTION_AWS_SECRET_ACCESS_KEY} bundle exec middleman s3_sync -e production
+      - AWS_ACCESS_KEY_ID=${PRODUCTION_AWS_ACCESS_KEY_ID} AWS_SECRET_ACCESS_KEY=${PRODUCTION_AWS_SECRET_ACCESS_KEY} bundle exec middleman s3_sync -B -e production
