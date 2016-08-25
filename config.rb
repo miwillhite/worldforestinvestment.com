@@ -62,10 +62,16 @@ configure :staging do
   # Minify Javascript on build
   activate :minify_javascript
 
+  # Fingerprint assets
+  activate :asset_hash
+
   activate :s3_sync do |s3_sync|
     s3_sync.bucket = 'worldforestinvestment-staging.com'
     s3_sync.delete = false
   end
+
+  # Caching
+  caching_policy 'text/html', max_age: 0, must_revalidate: true
 end
 
 configure :production do
