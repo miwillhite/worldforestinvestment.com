@@ -7,12 +7,14 @@ This branch adds the [NAME] property
 * [ ] Images
 * [ ] Documents
 * [ ] Document Archive
+* [ ] Permissions
 
 **Production**
 
 * [ ] Images
 * [ ] Documents
 * [ ] Document Archive
+* [ ] Permissions
 
 * [ ] Backup original
 * [ ] **Ready for deploy**
