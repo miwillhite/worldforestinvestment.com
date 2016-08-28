@@ -159,14 +159,6 @@ sup {
   @include link-destination-indicator('IMG');
 }
 
-[href$='.jpg']:after {
-  @include link-destination-indicator('IMG');
-}
-
-[href$='.jpeg']:after {
-  @include link-destination-indicator('IMG');
-}
-
 .top-bar-section {
   li.active:not(.has-form) {
     a:not(.button) {
