@@ -30,14 +30,16 @@ images:
 
 documents:
   - title : Directions and Description
-    href  : '/documents/forestland-for-sale/jewell/description-and-directions.docx'
+    href  : /documents/forestland-for-sale/jewell/description-and-directions.docx
   - title : Tax Lot Map
-    href  : '/documents/forestland-for-sale/jewell/taxlot.pdf'
+    href  : /documents/forestland-for-sale/jewell/taxlot.pdf
   - title : Aerial Photo
-    href  : '/documents/forestland-for-sale/jewell/aerial.pdf'
+    href  : /documents/forestland-for-sale/jewell/aerial.pdf
   - title : Preliminary Title Review
-    href  : '/documents/forestland-for-sale/jewell/ptr.pdf'
+    href  : /documents/forestland-for-sale/jewell/ptr.pdf
   - title : Survey
-    href  : '/documents/forestland-for-sale/jewell/survey.tif'
+    href  : /documents/forestland-for-sale/jewell/survey.tif
   - title : Purchase and Sale Agreement
-    href  : '/documents/forestland-for-sale/jewell/purchase.pdf'
+    href  : /documents/forestland-for-sale/jewell/purchase.pdf
+
+archive_document_url: /documents/forestland-for-sale/jewell/jewell-documents.zip
