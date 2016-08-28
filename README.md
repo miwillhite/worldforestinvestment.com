@@ -2,7 +2,8 @@
 
 ## Resources
 
-[Staging Server](http://worldforestinvestment.com.s3-website-us-east-1.amazonaws.com/)
+[Staging Server](http://worldforestinvestment-staging.com.s3-website-us-east-1.amazonaws.com/)
+[Production Server](http://worldforestinvestment.com.s3-website-us-east-1.amazonaws.com/)
 
 ## Requirements
 
