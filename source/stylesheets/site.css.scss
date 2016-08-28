@@ -147,6 +147,26 @@ sup {
   @include link-destination-indicator('PDF');
 }
 
+[href$='.docx']:after {
+  @include link-destination-indicator('WORD');
+}
+
+[href$='.tif']:after {
+  @include link-destination-indicator('IMG');
+}
+
+[href$='.tiff']:after {
+  @include link-destination-indicator('IMG');
+}
+
+[href$='.jpg']:after {
+  @include link-destination-indicator('IMG');
+}
+
+[href$='.jpeg']:after {
+  @include link-destination-indicator('IMG');
+}
+
 .top-bar-section {
   li.active:not(.has-form) {
     a:not(.button) {
