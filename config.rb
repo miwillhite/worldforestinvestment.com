@@ -81,6 +81,9 @@ configure :production do
   # Minify Javascript on build
   activate :minify_javascript
 
+  # Fingerprint assets
+  activate :asset_hash
+
   activate :s3_sync do |s3_sync|
     s3_sync.bucket = 'worldforestinvestment.com'
     s3_sync.delete = false
