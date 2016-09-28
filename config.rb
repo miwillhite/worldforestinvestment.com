@@ -20,7 +20,7 @@ property_listings = Dir.entries('./data/properties/').map do |file|
     data = Middleman::Util::EnhancedHash.load("./data/properties/#{file}")
     data.merge({ url: "/forestland-for-sale/#{data.title.parameterize}" })
   end
-end.compact
+end.compact.sort_by(&:order).reverse
 
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
 
@@ -47,7 +47,7 @@ ready do
   resource = sitemap.find_resource_by_path 'forestland-for-sale/index.html'
   resource.add_metadata locals: {
     active_listings: property_listings.reject(&:sold),
-    inactive_listings: property_listings.select(&:sold)
+    inactive_listings: property_listings.select(&:sold),
   }
 end
 
